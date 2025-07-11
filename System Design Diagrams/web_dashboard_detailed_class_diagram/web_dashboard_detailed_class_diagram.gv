@@ -1,0 +1,140 @@
+// Detailed Web Dashboard Class Diagram
+digraph WebDashboardDetailed {
+	fontsize=10 rankdir=TB
+	DashboardPage [label="{Dashboard.html|
+|
++ renderSummary()\l
+}" shape=record]
+	LeaveAppPage [label="{Leave_Application.html|
+|
++ renderForm()\l
++ submitRequest()\l
+}" shape=record]
+	ProfilePage [label="{Profile.html|
+|
++ displayInfo()\l
++ editProfile()\l
+}" shape=record]
+	ReportPage [label="{Report.html|
+|
++ displayReports()\l
++ exportReport()\l
+}" shape=record]
+	ApprovalPage [label="{Approval.html|
+|
++ listAbsences()\l
++ approveOrReject()\l
+}" shape=record]
+	MessagePage [label="{Message.html|
+|
++ displayMessages()\l
++ sendMessage()\l
+}" shape=record]
+	DashboardView [label="{DashboardView|
+|
++ get(request)\l
++ prepareSummary()\l
+}" shape=record]
+	LeaveAppView [label="{LeaveApplicationView|
+|
++ get(request)\l
++ post(request)\l
++ validateForm()\l
+}" shape=record]
+	ProfileView [label="{ProfileView|
+|
++ get(request)\l
++ post(request)\l
++ updateUser()\l
+}" shape=record]
+	ReportView [label="{ReportView|
+|
++ get(request)\l
++ exportReport()\l
++ fetchReportData()\l
+}" shape=record]
+	ApprovalView [label="{ApprovalView|
+|
++ get(request)\l
++ post(request)\l
++ changeRequestStatus()\l
+}" shape=record]
+	MessageView [label="{MessageView|
+|
++ get(request)\l
++ post(request)\l
++ handleMessage()\l
+}" shape=record]
+	User [label="{User|
++ id: int\l
++ name: str\l
++ email: str\l
++ role: str\l
+|
+}" shape=record]
+	Student [label="{Student|
++ user_id: FK\l
++ student_id: str\l
+|
+}" shape=record]
+	Teacher [label="{Teacher|
++ user_id: FK\l
++ teacher_id: str\l
+|
+}" shape=record]
+	Subject [label="{Subject|
++ id: int\l
++ name: str\l
++ teacher_id: FK\l
+|
+}" shape=record]
+	AttendanceRecord [label="{AttendanceRecord|
++ id: int\l
++ student_id: FK\l
++ subject_id: FK\l
++ timestamp: datetime\l
++ status: str\l
+|
+}" shape=record]
+	AbsenceRequest [label="{AbsenceRequest|
++ id: int\l
++ student_id: FK\l
++ reason: str\l
++ status: str\l
+|
+}" shape=record]
+	Message [label="{Message|
++ id: int\l
++ sender_id: FK\l
++ receiver_id: FK\l
++ content: str\l
++ timestamp: datetime\l
+|
+}" shape=record]
+	Report [label="{Report|
++ id: int\l
++ subject_id: FK\l
++ summary: str\l
+|
+}" shape=record]
+	DashboardPage -> DashboardView [style=dashed]
+	LeaveAppPage -> LeaveAppView [style=dashed]
+	ProfilePage -> ProfileView [style=dashed]
+	ReportPage -> ReportView [style=dashed]
+	ApprovalPage -> ApprovalView [style=dashed]
+	MessagePage -> MessageView [style=dashed]
+	DashboardView -> Subject [label=uses style=dotted]
+	LeaveAppView -> AbsenceRequest [label=creates style=dotted]
+	ProfileView -> User [label=updates style=dotted]
+	ReportView -> Report [label=reads style=dotted]
+	ApprovalView -> AbsenceRequest [label=modifies style=dotted]
+	MessageView -> Message [label="sends/reads" style=dotted]
+	Student -> User [arrowhead=empty]
+	Teacher -> User [arrowhead=empty]
+	Subject -> Teacher [label="N:1" style=solid]
+	AttendanceRecord -> Student [label="N:1" style=solid]
+	AttendanceRecord -> Subject [label="N:1" style=solid]
+	AbsenceRequest -> Student [label="N:1" style=solid]
+	Message -> User [label="N:N" style=solid]
+	Report -> Subject [label="1:1" style=solid]
+}

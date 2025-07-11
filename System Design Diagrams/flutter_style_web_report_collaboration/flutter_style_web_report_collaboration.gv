@@ -1,0 +1,33 @@
+// Flutter-Style Collaboration - View Report
+digraph FlutterStyleWebReportCollab {
+	fontsize=10 rankdir=TB
+	Teacher [label=":Teacher" shape=ellipse]
+	ReportUI [label="reportPage:ReportUI|
++ clickViewReport()\l
++ clickExport()\l
+" shape=record]
+	ReportView [label="view:ReportView|
++ get()\l
++ export()\l
++ generateFile()\l
+" shape=record]
+	ReportModel [label="rep:Report|
++ fetchReports()\l
++ getExportData()\l
+" shape=record]
+	DB [label=":Database" shape=cylinder]
+	Teacher -> ReportUI [label="1: clickViewReport()" style=solid]
+	ReportUI -> ReportView [label="2: get()" style=solid]
+	ReportView -> ReportModel [label="3: fetchReports()" style=solid]
+	ReportModel -> DB [label="4: query(subject_id)" style=solid]
+	DB -> ReportModel [label="5: resultSet" style=dotted]
+	ReportModel -> ReportView [label="6: returnReports()" style=solid]
+	ReportView -> ReportUI [label="7: renderReports()" style=solid]
+	Teacher -> ReportUI [label="8: clickExport()" style=solid]
+	ReportUI -> ReportView [label="9: export()" style=solid]
+	ReportView -> ReportModel [label="10: getExportData()" style=solid]
+	ReportModel -> DB [label="11: query(full_report)" style=solid]
+	DB -> ReportModel [label="12: reportData" style=dotted]
+	ReportModel -> ReportView [label="13: generateFile()" style=solid]
+	ReportView -> ReportUI [label="14: download()" style=solid]
+}

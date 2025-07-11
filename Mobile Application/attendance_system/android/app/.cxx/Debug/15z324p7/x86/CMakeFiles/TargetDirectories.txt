@@ -1,0 +1,2 @@
+F:/GP/Mobile Application/attendance_system/android/app/.cxx/Debug/15z324p7/x86/CMakeFiles/edit_cache.dir
+F:/GP/Mobile Application/attendance_system/android/app/.cxx/Debug/15z324p7/x86/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,153 @@
+// Merged UI + Logic Flutter Class Diagram
+digraph MergedFlutterClassDiagram {
+	fontsize=10 rankdir=TB
+	HomePage [label="{HomePage|
++ subjects: List<Subject>\l
+|
++ build()\l
++ navigateToSubjectReport()\l
+}" shape=record]
+	SubjectReportScreen [label="{SubjectReportScreen|
++ subject: Subject\l
+|
++ build()\l
++ submitAbsenceRequest()\l
+}" shape=record]
+	RequestAbsenceScreen [label="{RequestAbsenceScreen|
++ requests: List<AbsenceRequest>\l
+|
++ build()\l
++ submitRequest()\l
+}" shape=record]
+	ProfileScreen [label="{ProfileScreen|
++ userData: AppUser\l
+|
++ build()\l
++ updateProfile()\l
+}" shape=record]
+	NotificationsScreen [label="{NotificationsScreen|
++ notifications: List<Notification>\l
+|
++ build()\l
+}" shape=record]
+	SettingsScreen [label="{SettingsScreen|
+|
++ build()\l
++ openProfile()\l
+}" shape=record]
+	SubjectCard [label="{SubjectCard|
++ subject: Subject\l
+|
++ build()\l
++ onTap()\l
+}" shape=record]
+	BottomNavBar [label="{BottomNavBar|
+|
++ build()\l
++ onItemTapped()\l
+}" shape=record]
+	CommonAppBar [label="{CommonAppBar|
++ title: String\l
+|
++ build()\l
+}" shape=record]
+	AuthController [label="{AuthController|
+|
++ login(email, password)\l
++ logout()\l
++ getCurrentUser()\l
+}" shape=record]
+	AttendanceController [label="{AttendanceController|
+|
++ markAttendance()\l
++ fetchAttendance()\l
++ getAttendanceReport()\l
+}" shape=record]
+	AbsenceController [label="{AbsenceController|
+|
++ submitRequest()\l
++ getRequests()\l
+}" shape=record]
+	NotificationController [label="{NotificationController|
+|
++ getNotifications()\l
++ sendNotification()\l
+}" shape=record]
+	LocalStorageService [label="{LocalStorageService|
+|
++ save()\l
++ load()\l
++ clear()\l
+}" shape=record]
+	APIService [label="{APIService|
+|
++ get()\l
++ post()\l
++ put()\l
++ delete()\l
+}" shape=record]
+	AppUser [label="{AppUser|
++ id: String\l
++ name: String\l
++ email: String\l
++ role: String\l
++ profileImage: String\l
+|
+}" shape=record]
+	Student [label="{Student||}" shape=record]
+	Teacher [label="{Teacher||}" shape=record]
+	Subject [label="{Subject|
++ id: String\l
++ name: String\l
++ teacherId: String\l
+|
+}" shape=record]
+	AttendanceRecord [label="{AttendanceRecord|
++ id: String\l
++ studentId: String\l
++ subjectId: String\l
++ timestamp: DateTime\l
++ status: String\l
+|
+}" shape=record]
+	AbsenceRequest [label="{AbsenceRequest|
++ id: String\l
++ studentId: String\l
++ reason: String\l
++ date: DateTime\l
++ status: String\l
+|
+}" shape=record]
+	Notification [label="{Notification|
++ id: String\l
++ title: String\l
++ message: String\l
++ recipientId: String\l
++ timestamp: DateTime\l
+|
+}" shape=record]
+	Student -> AppUser [arrowhead=empty]
+	Teacher -> AppUser [arrowhead=empty]
+	HomePage -> SubjectCard [style=dashed]
+	SubjectCard -> SubjectReportScreen [label=navigates style=dashed]
+	SubjectReportScreen -> RequestAbsenceScreen [label=opens style=dashed]
+	SettingsScreen -> ProfileScreen [label=opens style=dashed]
+	BottomNavBar -> HomePage [style=dashed]
+	BottomNavBar -> NotificationsScreen [style=dashed]
+	BottomNavBar -> SettingsScreen [style=dashed]
+	BottomNavBar -> ProfileScreen [style=dashed]
+	ProfileScreen -> AuthController [label=uses style=dashed]
+	RequestAbsenceScreen -> AbsenceController [label=uses style=dashed]
+	NotificationsScreen -> NotificationController [label=uses style=dashed]
+	SubjectReportScreen -> AttendanceController [label=uses style=dashed]
+	AuthController -> AppUser [style=dotted]
+	AttendanceController -> AttendanceRecord [style=dotted]
+	AttendanceController -> Subject [style=dotted]
+	AbsenceController -> AbsenceRequest [style=dotted]
+	NotificationController -> Notification [style=dotted]
+	LocalStorageService -> AppUser [style=dotted]
+	APIService -> Subject [style=dotted]
+	APIService -> AttendanceRecord [style=dotted]
+	APIService -> AbsenceRequest [style=dotted]
+	APIService -> Notification [style=dotted]
+}
