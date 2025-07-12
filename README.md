@@ -1,36 +1,28 @@
-# Smart Attendance System
+# Smart Attendance System using Artificial Intelligence
 
-![System Architecture](assets/system-architecture.png) <!-- Add architecture diagram -->
+The project is dedicated to managing attendance and absence records for students. It tracks student attendance rates in each subject and provides instructors with insights into both overall subject attendance and individual student attendance.
 
-A full-stack attendance management solution featuring:
-- **📱 Mobile App** (Flutter) for students/instructors
-- **🖥️ Web Portal** (Django Admin + Custom UI) for administrators
-- **🧠 AI Engine** for facial recognition attendance
-- **📊 Real-time Analytics Dashboard**
+## 🖼️ System Screenshots
 
-## 🌟 Key Features
+### Mobile App
+<img width="202" height="433" alt="Screenshot 2024-12-07 115327" src="https://github.com/user-attachments/assets/23b9103b-5ae8-4d14-ae67-c00bb147c78e" />
+<img width="209" height="438" alt="Screenshot 2024-12-07 115405" src="https://github.com/user-attachments/assets/0e4e7c32-6433-4706-8471-dce921ee1611" />
+<img width="245" height="538" alt="Screenshot 2024-12-07 184908" src="https://github.com/user-attachments/assets/a07bdcc2-16fd-409a-a0c7-0454bb2883aa" />
+<img width="245" height="542" alt="Screenshot 2024-12-07 184917" src="https://github.com/user-attachments/assets/cb742984-9a7e-4433-9018-13390b97326c" />
+<img width="245" height="530" alt="Screenshot 2024-12-07 184924" src="https://github.com/user-attachments/assets/b517d719-0a12-40f4-bfa9-44d41834566c" />
+<img width="244" height="534" alt="Screenshot 2024-12-07 184934" src="https://github.com/user-attachments/assets/d0660e2e-c7c4-4110-b330-f222c87cecf8" />
+<img width="247" height="538" alt="Screenshot 2024-12-07 184941" src="https://github.com/user-attachments/assets/a0c3cc02-ba7c-4e70-8484-2b8c467f78b1" />
+<img width="245" height="533" alt="Screenshot 2024-12-07 185004" src="https://github.com/user-attachments/assets/4f83afbb-0278-4171-a35e-672a3ac1eb6b" />
 
-### Mobile Application
-- 👥 Role-based access (Student/Instructor/Admin)
-- 📅 Interactive class schedules
-- 🤖 Face recognition attendance marking
-- 📈 Personalized attendance reports
-- 📝 Digital leave applications
-- 🔔 Push notifications
 
 ### Web Portal
-- 👨‍💼 Admin dashboard with system oversight
-- 👥 User management interface
-- 📚 Course/subject configuration
-- 📊 Comprehensive analytics
-- ⚙️ System configuration
+![WhatsApp Image 2025-06-23 at 01 36 57_2f19f5a5](https://github.com/user-attachments/assets/7e71451d-86cc-49c4-8ebf-82d7104ef938)
+![WhatsApp Image 2025-06-23 at 01 39 51_2522a6ff](https://github.com/user-attachments/assets/efb85b53-9c7a-4d32-92fe-1a8dd4df4d3a)
+![WhatsApp Image 2025-06-23 at 01 32 41_3acbda3d](https://github.com/user-attachments/assets/cb95cff9-1b25-4502-a501-7cfdf4e1977d)
+![WhatsApp Image 2025-06-23 at 01 37 39_5a62ab60](https://github.com/user-attachments/assets/3254aea5-ff85-47a6-a30c-989c3b7fbcd0)
+![WhatsApp Image 2025-06-23 at 01 40 45_b7f26c2f](https://github.com/user-attachments/assets/82872935-2045-4b21-971a-2f360e9b954f)
+![WhatsApp Image 2025-06-23 at 01 41 57_4f9b3129](https://github.com/user-attachments/assets/1a2c9f46-9254-42ac-ad5c-2072028b2016)
 
-### Backend Services
-- 🔐 Secure JWT authentication
-- 📱 Mobile API endpoints
-- 🌐 Web admin interfaces
-- 🤖 AI processing microservice
-- 📦 PostgreSQL database
 
 ## 🛠 Technology Stack
 
@@ -45,36 +37,10 @@ A full-stack attendance management solution featuring:
 |-----------|--------------|
 | Core API | Django REST Framework |
 | Database | PostgreSQL |
-| AI Service | Python, OpenCV, FaceNet |
-| Web Server | Nginx, Gunicorn |
+| AI Service | Python, OpenCV,YoloV11, FaceNet |
 
-### DevOps
-| Area | Tools |
-|------|-------|
-| Containerization | Docker |
-| CI/CD | GitHub Actions |
-
-## 🖼️ System Screenshots
-
-### Mobile App
-<img width="202" height="433" alt="Screenshot 2024-12-07 115327" src="https://github.com/user-attachments/assets/8b9bc845-1317-4981-babc-fab5891ae8e6" />
-<img width="247" height="538" alt="Screenshot 2024-12-07 184941" src="https://github.com/user-attachments/assets/174cfd7c-8a83-4645-bca0-dfd2758ce2bb" />
-<img width="244" height="534" alt="Screenshot 2024-12-07 184934" src="https://github.com/user-attachments/assets/288f7fb0-ba36-431b-b818-7c671b8de10a" />
-<img width="245" height="530" alt="Screenshot 2024-12-07 184924" src="https://github.com/user-attachments/assets/43933cfe-5590-49e9-a99d-9aca4c53ee8c" />
-<img width="245" height="542" alt="Screenshot 2024-12-07 184917" src="https://github.com/user-attachments/assets/fcaadce1-8bd6-4233-898f-58f896d1ab36" />
-<img width="245" height="538" alt="Screenshot 2024-12-07 184908" src="https://github.com/user-attachments/assets/cf8d91d8-cf26-4931-ae47-95ffceab42c8" />
-<img width="209" height="438" alt="Screenshot 2024-12-07 115405" src="https://github.com/user-attachments/assets/885d2d23-130a-43be-b468-145c6f2bbebe" />
-<img width="245" height="533" alt="Screenshot 2024-12-07 185004" src="https://github.com/user-attachments/assets/d9a16e28-dcdf-4e4e-bb40-0d63801db1c8" />
-
-
-### Web Portal
-![WhatsApp Image 2025-06-23 at 01 56 28_35214748](https://github.com/user-attachments/assets/78c11d6f-0e97-4bce-b70e-1638edcce6e4)
-![WhatsApp Image 2025-06-23 at 01 41 57_4f9b3129](https://github.com/user-attachments/assets/22e43960-8979-43c6-b4cd-322d60933ff0)
-![WhatsApp Image 2025-06-23 at 01 40 45_b7f26c2f](https://github.com/user-attachments/assets/c0502230-138c-456a-8ea7-f1e1219d37f8)
-![WhatsApp Image 2025-06-23 at 01 39 51_2522a6ff](https://github.com/user-attachments/assets/b591f7ac-51fb-4bad-b466-689672218081)
-![WhatsApp Image 2025-06-23 at 01 37 39_5a62ab60](https://github.com/user-attachments/assets/fc41d3c7-a9d1-4add-b57d-8c24676a2ac1)
-![WhatsApp Image 2025-06-23 at 01 36 57_2f19f5a5](https://github.com/user-attachments/assets/2d667a80-a707-44fe-bb8b-9b726cb6eb81)
-![WhatsApp Image 2025-06-23 at 01 32 41_3acbda3d](https://github.com/user-attachments/assets/607e3fa1-8678-4a36-a7cb-8beebefd2ebd)
+##ِAI Infrastructure
+The project is to detect the attendance and absence rate and solve the problem for both the doctor and the students and save time and effort as a camera is installed in the room and all it does is take a picture and identify people's faces and know the students through yolov11 and then it performs the recognition process through FaceNet any person who is not recognized and is not a student, whether it is an instructor or someone outside the classroom who does not attend by comparing the faces with the database and after he attends, he interacts with the student's application and the instructor's web and shows the results of attendance and absence and solves the problem of crowding of students in front of a camera or fingerprint and solves the problem of the QR code system and the paper system
 
 
 ## 🚀 Deployment Guide
@@ -83,14 +49,15 @@ A full-stack attendance management solution featuring:
 ```bash
 # Clone the repository
 git clone https://github.com/Smart-Attendance-System/attendance-system.git
-cd attendance-system
 
-# Start services using Docker
-docker-compose up -d
+#activation
+cd backend
+.\venv\Scripts\Activate   
 
-# Apply migrations
-docker-compose exec web python manage.py migrate
+#run
+python manage.py runserver
+ python manage.py mark_attendance_ai --model "F:\GP\backend\backend\academics\management\commands\model.pt" --dataset "F:\GP\backend\backend\academics\management\commands\dataset1.npz" --camera "http://192.168.1.25:8080/video"
 
-# Create superuser
-docker-compose exec web python manage.py createsuperuser
+#run application
+flutter pub get                                                                                                                               
 
