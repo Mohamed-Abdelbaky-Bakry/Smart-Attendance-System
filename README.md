@@ -39,7 +39,8 @@ The project is dedicated to managing attendance and absence records for students
 | Database | PostgreSQL |
 | AI Service | Python, OpenCV,YoloV11, FaceNet |
 
-##AI Infrastructure
+## AI Infrastructure
+
 The project is to detect the attendance and absence rate and solve the problem for both the doctor and the students and save time and effort as a camera is installed in the room and all it does is take a picture and identify people's faces and know the students through yolov11 and then it performs the recognition process through FaceNet any person who is not recognized and is not a student, whether it is an instructor or someone outside the classroom who does not attend by comparing the faces with the database and after he attends, he interacts with the student's application and the instructor's web and shows the results of attendance and absence and solves the problem of crowding of students in front of a camera or fingerprint and solves the problem of the QR code system and the paper system
 
 
