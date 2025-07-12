@@ -1,12 +1,16 @@
 # Smart Attendance System using Artificial Intelligence
 
-The project is dedicated to managing attendance and absence records for students. It tracks student attendance rates in each subject and provides instructors with insights into both overall subject attendance and individual student attendance.
+The project is dedicated to managing student attendance and absence records.
+It tracks each student’s attendance rate per subject and provides instructors with detailed insights into both overall subject attendance and individual student participation.
+
+A camera is installed in the classroom to automate the attendance process. It captures an image, detects faces using YOLOv11, and then uses FaceNet for face recognition. The system distinguishes between recognized students and other individuals (such as instructors or unauthorized persons) by comparing captured faces with the database.
+
+Once attendance is confirmed, the system synchronizes with both the student mobile application and the instructor's web dashboard, displaying real-time attendance data. This approach eliminates the need for QR codes, fingerprint scanners, or paper-based systems, and helps avoid crowding and delays at classroom entrances.
 
 ## 🖼️ System Screenshots
 
 ### Mobile App
 <img width="202" height="433" alt="Screenshot 2024-12-07 115327" src="https://github.com/user-attachments/assets/23b9103b-5ae8-4d14-ae67-c00bb147c78e" />
-<img width="209" height="438" alt="Screenshot 2024-12-07 115405" src="https://github.com/user-attachments/assets/0e4e7c32-6433-4706-8471-dce921ee1611" />
 <img width="245" height="538" alt="Screenshot 2024-12-07 184908" src="https://github.com/user-attachments/assets/a07bdcc2-16fd-409a-a0c7-0454bb2883aa" />
 <img width="245" height="542" alt="Screenshot 2024-12-07 184917" src="https://github.com/user-attachments/assets/cb742984-9a7e-4433-9018-13390b97326c" />
 <img width="245" height="530" alt="Screenshot 2024-12-07 184924" src="https://github.com/user-attachments/assets/b517d719-0a12-40f4-bfa9-44d41834566c" />
@@ -39,12 +43,7 @@ The project is dedicated to managing attendance and absence records for students
 | Database | PostgreSQL |
 | AI Service | Python, OpenCV,YoloV11, FaceNet |
 
-## AI Infrastructure
-
-The project is to detect the attendance and absence rate and solve the problem for both the doctor and the students and save time and effort as a camera is installed in the room and all it does is take a picture and identify people's faces and know the students through yolov11 and then it performs the recognition process through FaceNet any person who is not recognized and is not a student, whether it is an instructor or someone outside the classroom who does not attend by comparing the faces with the database and after he attends, he interacts with the student's application and the instructor's web and shows the results of attendance and absence and solves the problem of crowding of students in front of a camera or fingerprint and solves the problem of the QR code system and the paper system
-
-
-## 🚀 Deployment Guide
+## 🚀 Installation Guide
 
 ### Backend Setup
 ```bash
@@ -52,13 +51,22 @@ The project is to detect the attendance and absence rate and solve the problem f
 git clone https://github.com/Smart-Attendance-System/attendance-system.git
 
 #activation
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+#migration
 cd backend
-.\venv\Scripts\Activate   
-
-#run
+python manage.py makemigrations 
+python manage.py migrate
 python manage.py runserver
- python manage.py mark_attendance_ai --model "F:\GP\backend\backend\academics\management\commands\model.pt" --dataset "F:\GP\backend\backend\academics\management\commands\dataset1.npz" --camera "http://192.168.1.25:8080/video"
 
-#run application
-flutter pub get                                                                                                                               
+#run 
+python manage.py mark_attendance_ai --model "F:\GP\backend\backend\academics\management\commands\model.pt" --dataset "F:\GP\backend\backend\academics\management\commands\dataset1.npz" --camera "http://192.168.1.25:8080/video"
+```
+### Application Setup
+```bash
+flutter pub get
+```
+                                                                                                                            
 
